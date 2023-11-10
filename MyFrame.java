@@ -32,6 +32,7 @@ public class MyFrame extends JFrame implements ActionListener {
         showLibraryButton.setBounds(150,100,150,50);
         showLibraryButton.addActionListener(this);
         showLibraryButton.setText("Show all");
+        showLibraryButton.setHorizontalAlignment(SwingConstants.CENTER);
 
         sortTitleButton = new JButton();
         sortTitleButton.setBounds(150,160,150,50);
@@ -77,6 +78,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.add(sortPersonButton);
         this.add(sortYearButton);
         this.add(exit);
+        exit.setHorizontalAlignment(SwingConstants.CENTER);
     }
     public void actionPerformed(ActionEvent e ){
         if (e.getSource() == showLibraryButton) {
@@ -278,12 +280,12 @@ public class MyFrame extends JFrame implements ActionListener {
                             break;
                         }
                     }
-                    if (found) {
-                        JOptionPane.showMessageDialog(null, "We have that material.", "Material Available ", JOptionPane.INFORMATION_MESSAGE);
+                }
+                if (found) {
+                    JOptionPane.showMessageDialog(null, "We have that material.", "Material Available ", JOptionPane.INFORMATION_MESSAGE);
 
-                    } else {
-                        JOptionPane.showMessageDialog(null, "We don't have " + textField.getText() + ". Try checking your spelling.", "Material Not Available ", JOptionPane.INFORMATION_MESSAGE);
-                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "We don't have " + textField.getText() + ". Try checking your spelling.", "Material Not Available ", JOptionPane.INFORMATION_MESSAGE);
                 }
             } catch (Exception f) {
                 JOptionPane.showMessageDialog(null, "Input is blank. Please enter a title.", "Blank Input", JOptionPane.ERROR_MESSAGE);
